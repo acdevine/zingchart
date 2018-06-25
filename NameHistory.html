@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--Script Reference[1]-->
+  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+</head>
+<body>
+  <!--Chart Placement[2]-->
+  <div id="chartDiv"></div>
+  <script>
+    var chartData = {
+      type: 'line',
+      "background-color":"#232D36",
+      "plotarea":{ 
+      "background-color":"#232D36"
+    }, 
+
+"crosshair-x":{
+    "plot-label": {
+      "text": "# of Annies born: %v",
+      "font-family": "Nunito",
+      "font-weight": "bold",
+      "font-color":"#15171F",
+      "background-color":"#F6F7F9",
+      "border-width":1,
+      "border-color":"F6F7F9"
+    },
+    "marker":{
+      "type":"circle",
+      "size":3,
+      "background-color":"#F6F7F9",
+      "border-width":1,
+      "border-color":"#F6F7F9"
+    },
+    "scale-label": {
+      "font-color": "#15171F",
+      "font-family": "Nunito",
+      "font-size": 12,
+      "font-weight":"bold",
+      "background-color": "#F6F7F9",
+      "border-width": 1,
+      "border-color": "#F6F7F9",
+      "padding": "5%"
+    }
+  },
+
+  "plotarea":{
+  	"margin-left":"5%",
+    "margin-bottom":"15%"
+  },
+
+      plot:{
+      	 "line-color":"#ED87F5",
+ 		     "line-width":2,
+
+ 		"marker": {
+      "background-color": "#ED87F5",
+      "border-color":"#ED87F5",
+      "size":3,
+        //       "rules":[
+        //     {
+        //         "rule":"%v=1703 || %v=6742 || %v=7349 || %v=438 || %v=541",
+        //         "type":"star5",
+        //         "size":5,
+        //         "background-color":"#E3BC20",
+        //         "border-width":1,
+        //         "border-color":"#E3BC20"
+        //     }
+        // ],
+  		},
+    
+       "tooltip":{
+          "visible":false
+  	     },
+  },
+      title: {
+        text: 'Popularity of the Name "Annie" Over Time',
+        "font-family":"Nunito",
+        "font-color":"#F6F7F9",
+        "font-weight":"none"
+      },
+      subtitle: {
+      	text: 'Click the boxes to learn more',
+        "font-family":"Nunito",
+        "font-color":"#8C8C8C",
+        "font-weight":"none"
+      },
+      
+      // "scroll-x":{
+      // 	"handle":{
+      // 		"background-color":"#ED87F5"
+      // 	},
+      //   "bar":{
+      //     "background-color":"#F6F7F9"
+      //   }
+      // },
+
+      "scale-x":{
+        "values":"1880:2017:1",
+        "format":"%v",
+        "zooming":true,
+        "zoom-to":[0,10],
+        "label": {
+        	"text":"Year",
+          "adjust-layout":true,
+          "font-size":12,
+          "font-family":"Nunito",
+          "font-color":"#F6F7F9",
+          "font-weight":"none",
+          "offset-y":"3",
+     	 },
+       "item":{
+            "font-size":12,
+            "font-family":"Nunito",
+            "font-color":"#F6F7F9"
+    }
+        },
+     	 
+     	 "scale-y":{
+     	 	"label":{
+     	 		"text":"Number of Babies Named Annie",
+     	 		"adjust-layout":true,
+          "font-size":12,
+          "font-family":"Nunito",
+          "font-color":"#F6F7F9",
+          "font-weight":"none",
+          "hook":"node:index=-15"
+     	 	},
+        "item":{
+            "font-size":12,
+            "font-family":"Nunito",
+            "font-color":"#F6F7F9"
+        },
+     	 },
+
+        preview: {
+        adjustLayout: true,
+        borderColor:'#F6F7F9',
+        y:"400",
+        mask: {
+          backgroundColor: '#F6F7F9',
+        }
+      },
+
+"labels":[
+                {
+                  "text":"Source: Social Security Administration",
+                  "font-family":"Nunito",
+                  "font-color":"#8C8C8C",
+                  "font-size":"10px",
+                  "x":"7",
+                  "y":"460"
+                },
+                {  
+                  "text":"Little Orphan Annie poem <br>published in November 1885",
+                  "url":"https://www.poets.org/poetsorg/poem/little-orphant-annie",
+                  "target":"_blank",
+                  "callout":true,
+                  "callout-position":"bottom",
+                  "hook":"node:index=5",
+                  "offset-y":"-35",
+                  "height":"40px",
+                  "width":"180px",
+                  "border-color":"#ED87F5",
+                  "font-family":"Nunito",
+                  "font-size":"12px",
+                  "font-color":"#15171F",
+                  "font-weight":"bold",
+                  "background-color":"#ED87F5",
+                  "border-width":"1px",
+                  "shadow":false
+                },
+                {
+                  "text":"Little Orphan Annie silent film <br>released in December 1918",
+                  "url":"https://www.imdb.com/title/tt0009306/",
+                  "target":"_blank",
+                  "callout":true,
+                  "callout-position":"top",
+                  "hook":"node:index=38",
+                  "offset-y":"35px",
+                  "x":"62px",
+                  "y":"115px",
+                  "height":"40px",
+                  "width":"186px",
+                  "border-color":"#ED87F5",
+                  "font-family":"Nunito",
+                  "font-size":"12px",
+                  "font-color":"#15171F",
+                  "font-weight":"bold",
+                  "background-color":"#ED87F5",
+                  "border-width":"1px",
+                  "shadow":false
+                },
+                {
+                  "text":"Little Orphan Annie comic strip<br>released in August 1924",
+                  "url":"https://en.wikipedia.org/wiki/Little_Orphan_Annie",
+                  "target":"_blank",
+    				      "callout":true,
+    				      "callout-position":"top",
+                  "hook":"node:index=44",
+                  "offset-y":"35px",
+                  "height":"40px",
+                  "width":"190px",
+                 	"border-color":"#ED87F5",
+                  "font-family":"Nunito",
+                  "font-size":"12px",
+                  "font-color":"#15171F",
+                  "font-weight":"bold",
+                  "background-color":"#ED87F5",
+                  "border-width":"1px",
+                  "shadow":false
+                },
+                {
+                  "text":"Annie reached its lowest <br>popularity in 1972",
+                  "url":"http://www.babynameinstitute.com/Names/Girl/Annie.html",
+                  "target":"_blank",
+    				      "callout":true,
+    				      "callout-position":"bottom",
+                  "hook":"node:index=92",
+                  "offset-y":"-33px",
+                  "height":"40px",
+                  "width":"154px",
+                 	"border-color":"#ED87F5",
+                  "font-family":"Nunito",
+                  "font-size":"12px",
+                  "font-color":"#15171F",
+                  "font-weight":"bold",
+                  "background-color":"#ED87F5",
+                  "border-width":"1px",
+                  "shadow":false
+                },
+                {
+                  "text":"Broadway musical 'Annie' and film 'Annie Hall' both premiered <br>in 1977; Soon after, Annie's popularity began to rise slightly",
+                  "url":"https://outtake.tribecashortlist.com/the-influential-style-of-annie-hall-bb0946702bca",
+                  "target":"_blank",
+                  "callout":true,
+                  "callout-position":"bottom",
+                  "x":"349px",
+                  "y":"200px",
+                  "height":"40px",
+                  "width":"370px",
+                  "hook":"node:index=97",
+                  "offset-y":"-35px",
+                  "border-color":"#ED87F5",
+                  "font-family":"Nunito",
+                  "font-size":"12px",
+                  "font-color":"#15171F",
+                  "font-weight":"bold",
+                  "background-color":"#ED87F5",
+                  "border-width":"1px",
+                  "shadow":false
+                }
+            ],
+	  
+      series: [  
+          { values: [1258,1326,1492,1589,1739,1703,1765,1844,2188,2123,2220,2096,2348,2251,2393,2390,2358,2307,2470,2289,3324,2396,2664,2551,2631,2793,2774,2891,2820,2904,3519,3298,4083,4267,4800,5936,6105,6404,6742,7146,7269,7208,7474,7096,7349,7351,6877,6561,6327,5951,5754,5092,5383,5124,5017,4853,4529,4481,4561,4149,4218,4078,4291,4068,3741,3739,3650,3759,3718,3453,3330,3061,2839,2560,2412,2223,2110,1830,1723,1588,1477,1301,1296,1120,1032,818,734,691,611,571,498,490,438,465,464,485,464,541,663,908,1002,973,1015,802,793,830,718,658,722,741,821,736,730,762,802,926,996,925,917,983,1041,979,974,919,813,836,807,781,822,857,810,822,832,900,1054,1003,1117,1087],
+          },  
+      ]
+    
+    };
+    zingchart.render({ 
+      id: 'chartDiv',
+      data: chartData
+    });
+  </script>
+</body>
+</html>
